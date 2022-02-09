@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('pageContent')
-    <h1>Comic'S LIST</h1>
+    <h1 class="text-center mt-5">Comic'S LIST</h1>
         <table class="table mt-5">
             <thead>
               <tr>

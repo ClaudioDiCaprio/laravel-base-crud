@@ -6,6 +6,6 @@
 <h3>Description:</h3>
 <p>{{$comic->description}}</p>
 <div>
-    <a href="{{route('comics.index')}}"><button type="button" class="btn btn-primary">goBack</button></a>
+    <a href="{{route('comics.index')}}"><button type="button" class="mb-3 btn btn-success">goBack</button></a>
 </div>
 @endsection

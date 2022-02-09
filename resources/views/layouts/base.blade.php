@@ -7,8 +7,8 @@
     <title>Comics store</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
-<body>
-   <div class="container">
+<body class="bg-primary pt-3">
+   <div class="container bg-light rounded pt-3">
     @yield('pageContent')
    </div>
 </body>
