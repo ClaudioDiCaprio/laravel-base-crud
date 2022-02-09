@@ -20,7 +20,7 @@
                 <td>{{$comic->price}}</td>
                 <td>{{$comic->sale_data}}</td>
                 <td>
-                    <a href=""><button type="button" class="btn btn-primary">WATCH</button></a>
+                    <a href="{{route("comics.show",$comic->id)}}"><button type="button" class="btn btn-primary">WATCH</button></a>
                 </td>
               </tr>
             @endforeach
