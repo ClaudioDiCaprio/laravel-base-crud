@@ -9,6 +9,7 @@
                 <th scope="col">name</th>
                 <th scope="col">price</th>
                 <th scope="col">sale_data</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -18,6 +19,9 @@
                 <td>{{$comic->name}}</td>
                 <td>{{$comic->price}}</td>
                 <td>{{$comic->sale_data}}</td>
+                <td>
+                    <a href=""><button type="button" class="btn btn-primary">WATCH</button></a>
+                </td>
               </tr>
             @endforeach
             </tbody>
