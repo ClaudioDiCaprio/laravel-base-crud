@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Comic;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +11,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+       $comics = config("comics");
+
+       foreach( $comics as $comic ) {
+           $newComic = new Comic();
+           $newComic-> name = $comic["title"];
+           $newComic-> description = $comic["description"];
+           $newComic-> image = $comic["thumb"];
+           $newComic-> price = $comic["price"];
+           $newComic-> sale_data = $comic["sale_date"];
+           $newComic-> type = $comic["type"];
+           $newComic->save();
+       }
     }
 }
