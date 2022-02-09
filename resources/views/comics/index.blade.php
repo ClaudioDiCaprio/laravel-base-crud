@@ -5,11 +5,11 @@
         <table class="table mt-5">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">name</th>
-                <th scope="col">price</th>
-                <th scope="col">sale_data</th>
-                <th scope="col">Action</th>
+                <th class="text-uppercase" scope="col">#id</th>
+                <th class="text-uppercase" scope="col">name</th>
+                <th class="text-uppercase" scope="col">price</th>
+                <th class="text-uppercase" scope="col">sale_data</th>
+                <th class="text-uppercase" scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
