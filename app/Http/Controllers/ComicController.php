@@ -89,6 +89,7 @@ class ComicController extends Controller
         $comic->image = $data["image"];
        }
         $comic->save();
+        return redirect()->route("comics.index");
         //restituisco la pagina show della risorsa modificata
     }
 
