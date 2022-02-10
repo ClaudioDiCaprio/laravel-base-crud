@@ -26,7 +26,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view("comics.create");
     }
 
     /**
@@ -59,9 +59,12 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        // recupero la risorsa che voglio modificare 
+        // dd($comic);
+        //restituisco il form per l'editing di questa risorsa
+        return view("comics.edit",compact("comic"));
     }
 
     /**
@@ -71,9 +74,22 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        // prendo tutti i dati del form
+        $data = $request->all();
+        // aggiorno la risorsa con i  nuovi dati
+        $comic->name = $data["name"];
+        $comic->description = $data["description"];
+        // $comic->type = $data["type"];
+        $comic->price = $data["price"];
+        $comic->sale_data = $data["sale_data"];
+
+       if( !empty($data['image'] ) ){
+        $comic->image = $data["image"];
+       }
+        $comic->save();
+        //restituisco la pagina show della risorsa modificata
     }
 
     /**
@@ -82,8 +98,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route("comics.index");
     }
 }
