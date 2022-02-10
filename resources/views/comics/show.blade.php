@@ -2,7 +2,7 @@
 
 @section('pageContent')
 <h1>{{$comic->name}}</h1>
-<img  class=" mt-5 mb-5" src="{{$comic->image}}" alt="{{$comic->name}}">
+<img  class=" ole mt-5 mb-5" src="{{$comic->image}}" alt="{{$comic->name}}">
 <h3>Description:</h3>
 <p class="mb-4 mt-3" >{{$comic->description}}</p>
 <div>
