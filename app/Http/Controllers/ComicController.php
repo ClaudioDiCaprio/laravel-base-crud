@@ -44,7 +44,7 @@ class ComicController extends Controller
             "description" => "required|string",
             "image" => "nullable|url",
             "price" => "required|min:1|max:2000",
-            "sale_data" => "required|date_format",
+            "sale_data" => "required|date",
             "type" => "required",
         ]);
 
@@ -96,7 +96,7 @@ class ComicController extends Controller
             "description" => "required|string",
             "image" => "nullable|url",
             "price" => "required|min:1|max:2000",
-            "sale_data" => "required|date_format",
+            "sale_data" => "required|date",
             "type" => "required",
         ]);
         // aggiorno la risorsa con i  nuovi dati
