@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comic;
+use Illuminate\Validation\Rule;
 class ComicController extends Controller
 {
     /**
@@ -37,7 +38,19 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $request->validate([
+            "name" => "required|string|max:100|unique:comics",
+            "description" => "required|string",
+            "image" => "nullable|url",
+            "price" => "required|integer|min:1|max:2000",
+            "sale_data" => "required|date_format",
+            "type" => "required",
+        ]);
+
+        $newComic = Comic ::create($data);
+        $newComic->save();
+        return redirect()->route('comics.show',$newComic->id);
     }
 
     /**
@@ -78,6 +91,14 @@ class ComicController extends Controller
     {
         // prendo tutti i dati del form
         $data = $request->all();
+        $request->validate([
+            "name" => "required|string|max:100|unique:comics,name,{$comic->id}",
+            "description" => "required|string",
+            "image" => "nullable|url",
+            "price" => "required|integer|min:1|max:2000",
+            "sale_data" => "required|date_format",
+            "type" => "required",
+        ]);
         // aggiorno la risorsa con i  nuovi dati
         $comic->name = $data["name"];
         $comic->description = $data["description"];
