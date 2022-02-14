@@ -43,7 +43,7 @@ class ComicController extends Controller
             "name" => "required|string|max:100|unique:comics",
             "description" => "required|string",
             "image" => "nullable|url",
-            "price" => "required|integer|min:1|max:2000",
+            "price" => "required|min:1|max:2000",
             "sale_data" => "required|date_format",
             "type" => "required",
         ]);
@@ -95,7 +95,7 @@ class ComicController extends Controller
             "name" => "required|string|max:100|unique:comics,name,{$comic->id}",
             "description" => "required|string",
             "image" => "nullable|url",
-            "price" => "required|integer|min:1|max:2000",
+            "price" => "required|min:1|max:2000",
             "sale_data" => "required|date_format",
             "type" => "required",
         ]);
